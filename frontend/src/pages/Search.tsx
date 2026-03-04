@@ -34,36 +34,36 @@ const Search = () => {
     };
   };
 
-  const isDataCorrect = (data: any): data is Offer[] => {
-    return (
-      Array.isArray(data) &&
-      data.every(
-        obj =>
-          typeof obj === 'object' &&
-          obj !== null &&
-          typeof obj.id === 'string' &&
-          typeof obj.opis === 'string' &&
-          typeof obj.zawod === 'string' &&
-          typeof obj.adres === 'object' &&
-          obj.adres !== null &&
-          typeof obj.adres.ulica === 'string' &&
-          typeof obj.adres.miejscowosc === 'string' &&
-          typeof obj.adres.wojewodztwo === 'string' &&
-          typeof obj.telefon_kontaktowy === 'string' &&
-          typeof obj.email_kontaktowy === 'string' &&
-          typeof obj.createdAt === 'string' &&
-          typeof obj.firma === 'object' &&
-          obj.firma !== null &&
-          typeof obj.firma.id === 'number' &&
-          typeof obj.firma.nazwa === 'string' &&
-          typeof obj.firma.logo === 'string' &&
-          typeof obj.firma.miasto === 'string',
-      )
-    );
-  };
+  // const isDataCorrect = (data: any): data is Offer[] => {
+  //   return (
+  //     Array.isArray(data) &&
+  //     data.every(
+  //       obj =>
+  //         typeof obj === 'object' &&
+  //         obj !== null &&
+  //         typeof obj.id === 'string' &&
+  //         typeof obj.opis === 'string' &&
+  //         typeof obj.zawod === 'string' &&
+  //         typeof obj.adres === 'object' &&
+  //         obj.adres !== null &&
+  //         typeof obj.adres.ulica === 'string' &&
+  //         typeof obj.adres.miejscowosc === 'string' &&
+  //         typeof obj.adres.wojewodztwo === 'string' &&
+  //         typeof obj.telefon_kontaktowy === 'string' &&
+  //         typeof obj.email_kontaktowy === 'string' &&
+  //         typeof obj.createdAt === 'string' &&
+  //         typeof obj.firma === 'object' &&
+  //         obj.firma !== null &&
+  //         typeof obj.firma.id === 'number' &&
+  //         typeof obj.firma.nazwa === 'string' &&
+  //         typeof obj.firma.logo === 'string' &&
+  //         typeof obj.firma.miasto === 'string',
+  //     )
+  //   );
+  // };
 
-  type City = { firma: { miasto: string } };
-  type Occupation = { zawod: string };
+  //type City = { firma: { miasto: string } };
+  //type Occupation = { zawod: string };
   type SortedOccupation = { name: string; count: number };
 
   const typeOptions = [
@@ -147,25 +147,25 @@ const Search = () => {
     );
   };
 
-  const filteredData = offerData
-    //filtrowanie po typie praktyk
-    .filter(() => selectedType !== 'Zdalne')
-    //filtrowanie po mieście
-    .filter(offer =>
-      selectedCity === 'All' || selectedCity === 'Wszystkie'
-        ? true
-        : offer.firma.miasto === selectedCity,
-    )
-    //filtrowanie na podstawie checkboxow
-    .filter(offer =>
-      selectedOccupations.length === 0
-        ? true
-        : selectedOccupations.includes(offer.zawod),
-    )
-    //filtrowanie na podstawie searchboxa
-    .filter(offer =>
-      offer.firma.nazwa.toLowerCase().includes(searchText.toLowerCase()),
-    );
+  // const filteredData = offerData
+  //   //filtrowanie po typie praktyk
+  //   .filter(() => selectedType !== 'Zdalne')
+  //   //filtrowanie po mieście
+  //   .filter(offer =>
+  //     selectedCity === 'All' || selectedCity === 'Wszystkie'
+  //       ? true
+  //       : offer.firma.miasto === selectedCity,
+  //   )
+  //   //filtrowanie na podstawie checkboxow
+  //   .filter(offer =>
+  //     selectedOccupations.length === 0
+  //       ? true
+  //       : selectedOccupations.includes(offer.zawod),
+  //   )
+  //   //filtrowanie na podstawie searchboxa
+  //   .filter(offer =>
+  //     offer.firma.nazwa.toLowerCase().includes(searchText.toLowerCase()),
+  //   );
 
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [filtersOpen, setFiltersOpen] = useState(!isMobile);
