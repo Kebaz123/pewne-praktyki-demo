@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 
 import { translations, type Language } from '@/locales';
 import { useSettings } from '@/context/SettingsContext';
 
 import '@/styles/Search.css';
 import SearchIcon from '@/assets/icons/search.svg?react';
-import LocationIcon from '@/assets/icons/location.svg?react';
-import PersonIcon from '@/assets/icons/person.svg?react';
+// import LocationIcon from '@/assets/icons/location.svg?react';
+// import PersonIcon from '@/assets/icons/person.svg?react';
 
 const Search = () => {
   const { language }: { language: Language } = useSettings();
