@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 853 656" width="853" height="656">
+	<defs>
+		<filter x="-50%" y="-50%" width="200%" height="200%" id="f1" ><feDropShadow dx="0" dy="0" stdDeviation="41.66666666666667" flood-color="#0cbb3b" flood-opacity="1.6"/></filter>
+	</defs>
+	<style>
+		.s0 { filter: url(#f1);fill: #0cbb3b } 
+	</style>
+	<path class="s0" d="m327 422l321-321q19-19 45-19 26 0 45 19 19 19 19 45 0 26-19 45l-366 366q-19 19-45 19-26 0-45-19l-170-170q-19-19-19-45 0-26 19-45 19-19 45-19 26 0 45 19z"/>
+</svg>

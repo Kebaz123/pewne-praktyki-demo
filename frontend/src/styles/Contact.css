@@ -1,0 +1,78 @@
+#contactPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.3em;
+  margin: 8vh 0 6vh;
+}
+
+#contactPage h1 {
+  font-size: 2.5em;
+  text-decoration: underline wavy var(--green);
+}
+
+#contactPage p {
+  max-width: 600px;
+}
+
+#links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 500px;
+  align-items: center;
+  margin: 50px 0;
+  padding-top: 50px;
+  border-top: solid 3px var(--green);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: 0.2s ease;
+}
+
+.link:hover {
+  font-size: 1.1em;
+}
+
+.link a {
+  font-size: inherit;
+  color: #b9b1df;
+}
+
+.link a:hover {
+  color: #a492ff;
+}
+
+.link svg {
+  width: 30px;
+  height: 30px;
+  fill: #b9b1df;
+}
+
+.link:hover svg {
+  fill: #a492ff;
+}
+
+@media (max-width: 768px) {
+  #contactPage {
+    margin-bottom: 30px;
+  }
+
+  #contactPage h1 {
+    font-size: 2em;
+  }
+
+  #contactPage p {
+    max-width: 75vw;
+    font-size: 1em;
+  }
+
+  #links {
+    width: 80vw;
+  }
+}

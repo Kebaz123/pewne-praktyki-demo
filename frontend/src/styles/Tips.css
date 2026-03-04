@@ -1,0 +1,11 @@
+#info {
+  font-weight: 900;
+  font-size: 1.3em;
+  background-color: var(--lightPurple);
+  width: 50px;
+  text-align: center;
+  padding: 30px;
+  border: solid 4px var(--purple);
+  border-radius: 15px;
+  margin: 50px auto 0;
+}

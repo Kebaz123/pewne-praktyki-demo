@@ -1,0 +1,120 @@
+/* custom variables */
+:root {
+  --green: #0cbb3b;
+  --greenRGB: 12, 187, 59;
+  --greenBg: #344a36;
+  --lightGreen: #4a8438;
+  --greenSelection: #354831;
+  --whiteSelection: #575561;
+  --purple: #665eb0;
+  --purpleRGB: 102, 94, 176;
+  --lightPurple: #514c6e;
+  --purpleBg: #362f3f;
+  --darkPurpleRGB: 36, 33, 39;
+  --navbarHeight: 70px;
+  --mobileNavbarHeight: 100px;
+  scrollbar-color: #695d72 transparent;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'BalooBhai';
+  background-image: url(../assets/images/background.jpg);
+  background-repeat: repeat;
+  background-attachment: fixed;
+  color: white;
+}
+
+::-moz-selection,
+::selection {
+  background-color: var(--lightPurple);
+}
+
+img::-moz-selection,
+img::selection {
+  background-color: rgb(43, 43, 43);
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  padding-top: var(--navbarHeight);
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+input,
+select,
+button {
+  font-family: 'BalooBhai';
+}
+
+.greenAccent {
+  color: var(--green);
+}
+
+.whiteAccent {
+  color: white !important;
+}
+
+.greenSelection::-moz-selection,
+.greenSelection::selection {
+  background-color: var(--greenSelection);
+}
+
+.whiteSelection::-moz-selection,
+.whiteSelection::selection {
+  background-color: var(--whiteSelection);
+}
+
+.errorBox {
+  background-color: rgb(121, 47, 47);
+  padding: 20px 30px;
+  border: solid 4px rgb(201, 54, 54);
+  border-radius: 15px;
+  width: fit-content;
+  text-align: center;
+  margin: 50px auto 0;
+}
+
+.errorBox p {
+  font-weight: 900;
+  font-size: 1.5em;
+  margin: 5px 0 20px;
+}
+
+@media only screen and (orientation: landscape) {
+  body {
+    background-position: center center;
+    background-size: 100% 100%;
+  }
+}
+
+@media only screen and (orientation: portrait) {
+  body {
+    background-position: 80% 0%;
+  }
+}
+
+@media (max-width: 1024px) {
+  main {
+    height: calc(100vh - 115px);
+    padding-top: 115px;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    height: calc(100vh - var(--mobileNavbarHeight));
+    padding-top: var(--mobileNavbarHeight);
+  }
+}

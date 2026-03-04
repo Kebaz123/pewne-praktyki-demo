@@ -1,0 +1,75 @@
+:root {
+  --boxBg: #29252e;
+  --boxBorder: #362f3f;
+  --inputBg: #372e46;
+  --inputBorder: #4b476f;
+  --activeInputBorder: 105, 91, 230;
+  --icon: #6962a4;
+}
+
+#formPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#formBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--boxBg);
+  width: fit-content;
+  padding: 10px;
+  padding-top: 20px;
+  border-radius: 30px;
+  margin-top: 20px;
+}
+
+.formInput {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 350px;
+  height: 35px;
+  margin: 15px;
+  padding: 5px;
+  background-color: var(--inputBg);
+  border: solid 3px var(--inputBorder);
+  border-radius: 25px;
+  transition: 0.4s ease;
+}
+
+.formInput input {
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 1.3em;
+}
+
+.formInput input:focus {
+  outline: none;
+}
+
+.formInput:focus-within {
+  border: solid 3px rgb(var(--activeInputBorder));
+  box-shadow: 0 0 15px rgba(var(--activeInputBorder), 0.5);
+}
+
+.formInput svg {
+  width: 22px;
+  height: 22px;
+  fill: var(--icon);
+  margin-left: 12px;
+}
+
+.formButton {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 15px;
+  color: white;
+  font-weight: 900;
+  background-color: var(--inputBg);
+  border: solid 2px var(--inputBorder);
+  border-radius: 15px;
+}
