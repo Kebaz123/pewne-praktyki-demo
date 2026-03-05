@@ -1,69 +1,69 @@
 import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 
 import { translations, type Language } from '@/locales';
 import { useSettings } from '@/context/SettingsContext';
 
 import '@/styles/Search.css';
 import SearchIcon from '@/assets/icons/search.svg?react';
-import LocationIcon from '@/assets/icons/location.svg?react';
-import PersonIcon from '@/assets/icons/person.svg?react';
+// import LocationIcon from '@/assets/icons/location.svg?react';
+// import PersonIcon from '@/assets/icons/person.svg?react';
 
 const Search = () => {
   const { language }: { language: Language } = useSettings();
   const t = translations[language].search;
 
-  type Offer = {
-    id: string;
-    opis: string;
-    zawod: string;
-    adres: {
-      ulica: string;
-      miejscowosc: string;
-      wojewodztwo: string;
-    };
-    telefon_kontaktowy: string;
-    email_kontaktowy: string;
-    createdAt: string;
-    firma: {
-      id: number;
-      nazwa: string;
-      logo: string;
-      miasto: string;
-    };
-  };
-
-  const isDataCorrect = (data: any): data is Offer[] => {
-    return (
-      Array.isArray(data) &&
-      data.every(
-        obj =>
-          typeof obj === 'object' &&
-          obj !== null &&
-          typeof obj.id === 'string' &&
-          typeof obj.opis === 'string' &&
-          typeof obj.zawod === 'string' &&
-          typeof obj.adres === 'object' &&
-          obj.adres !== null &&
-          typeof obj.adres.ulica === 'string' &&
-          typeof obj.adres.miejscowosc === 'string' &&
-          typeof obj.adres.wojewodztwo === 'string' &&
-          typeof obj.telefon_kontaktowy === 'string' &&
-          typeof obj.email_kontaktowy === 'string' &&
-          typeof obj.createdAt === 'string' &&
-          typeof obj.firma === 'object' &&
-          obj.firma !== null &&
-          typeof obj.firma.id === 'number' &&
-          typeof obj.firma.nazwa === 'string' &&
-          typeof obj.firma.logo === 'string' &&
-          typeof obj.firma.miasto === 'string',
-      )
-    );
-  };
-
-  type City = { firma: { miasto: string } };
-  type Occupation = { zawod: string };
+  // type Offer = {
+  //   id: string;
+  //   opis: string;
+  //   zawod: string;
+  //   adres: {
+  //     ulica: string;
+  //     miejscowosc: string;
+  //     wojewodztwo: string;
+  //   };
+  //   telefon_kontaktowy: string;
+  //   email_kontaktowy: string;
+  //   createdAt: string;
+  //   firma: {
+  //     id: number;
+  //     nazwa: string;
+  //     logo: string;
+  //     miasto: string;
+  //   };
+  // };
+  //
+  // const isDataCorrect = (data: any): data is Offer[] => {
+  //   return (
+  //     Array.isArray(data) &&
+  //     data.every(
+  //       obj =>
+  //         typeof obj === 'object' &&
+  //         obj !== null &&
+  //         typeof obj.id === 'string' &&
+  //         typeof obj.opis === 'string' &&
+  //         typeof obj.zawod === 'string' &&
+  //         typeof obj.adres === 'object' &&
+  //         obj.adres !== null &&
+  //         typeof obj.adres.ulica === 'string' &&
+  //         typeof obj.adres.miejscowosc === 'string' &&
+  //         typeof obj.adres.wojewodztwo === 'string' &&
+  //         typeof obj.telefon_kontaktowy === 'string' &&
+  //         typeof obj.email_kontaktowy === 'string' &&
+  //         typeof obj.createdAt === 'string' &&
+  //         typeof obj.firma === 'object' &&
+  //         obj.firma !== null &&
+  //         typeof obj.firma.id === 'number' &&
+  //         typeof obj.firma.nazwa === 'string' &&
+  //         typeof obj.firma.logo === 'string' &&
+  //         typeof obj.firma.miasto === 'string',
+  //     )
+  //   );
+  // };
+  //
+  // type City = { firma: { miasto: string } };
+  // type Occupation = { zawod: string };
   type SortedOccupation = { name: string; count: number };
 
   const typeOptions = [
@@ -81,7 +81,7 @@ const Search = () => {
     '+ 100 km',
   ];
 
-  const [offerData, setOfferData] = useState<Offer[]>([]);
+  // const [offerData, setOfferData] = useState<Offer[]>([]);
   const [cityOptions, setCityOptions] = useState<string[]>([]);
   const [sortedOccupations, setSortedOccupations] =
     useState<SortedOccupation[]>();
@@ -89,9 +89,10 @@ const Search = () => {
   const [selectedType, setSelectedType] = useState<string>(t.greenBox.all);
   const [selectedCity, setSelectedCity] = useState<string>(t.greenBox.all);
   const [selectedOccupations, setSelectedOccupations] = useState<string[]>([]);
-  const [searchText, setSearchText] = useState<string>('');
+  // const [searchText, setSearchText] = useState<string>('');
 
   useEffect(() => {
+    setSortedOccupations([]);
     setCityOptions([t.greenBox.all]);
     // fetch('http://localhost:5000/api/praktyki/przegladaj')
     //   .then(response => response.json())
@@ -147,6 +148,7 @@ const Search = () => {
     );
   };
 
+  /*
   const filteredData = offerData
     //filtrowanie po typie praktyk
     .filter(() => selectedType !== 'Zdalne')
@@ -165,7 +167,8 @@ const Search = () => {
     //filtrowanie na podstawie searchboxa
     .filter(offer =>
       offer.firma.nazwa.toLowerCase().includes(searchText.toLowerCase()),
-    );
+  );
+  */
 
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [filtersOpen, setFiltersOpen] = useState(!isMobile);
@@ -262,7 +265,7 @@ const Search = () => {
           <input
             type="text"
             placeholder={t.searchText}
-            onChange={e => setSearchText(e.currentTarget.value)}
+            // onChange={e => setSearchText(e.currentTarget.value)}
           />
         </div>
 

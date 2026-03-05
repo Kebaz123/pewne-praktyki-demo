@@ -85,8 +85,8 @@ const Navbar = () => {
               id="flagIcon"
               src={
                 language === 'pl'
-                  ? '../src/assets/images/PL-flag.png'
-                  : '../src/assets/images/UK-flag.png'
+                  ? '@/assets/images/PL-flag.png'
+                  : '@/assets/images/UK-flag.png'
               }
             />
             <span className={`arrow ${langMenuOpen ? 'open' : ''}`}>▾</span>
