@@ -6,6 +6,8 @@ import { useSettings } from '@/context/SettingsContext';
 import { translations } from '@/locales';
 import '@/components/Navbar.css';
 
+import FlagPL from '@/assets/images/PL-flag.png';
+import FlagUK from '@/assets/images/UK-flag.png';
 import DarkIcon from '@/assets/icons/darkTheme.svg?react';
 import LightIcon from '@/assets/icons/lightTheme.svg?react';
 import MenuIcon from '@/assets/icons/menu.svg?react';
@@ -81,14 +83,7 @@ const Navbar = () => {
             className="langButton"
             onClick={() => setLangMenuOpen(!langMenuOpen)}
           >
-            <img
-              id="flagIcon"
-              src={
-                language === 'pl'
-                  ? '@/assets/images/PL-flag.png'
-                  : '@/assets/images/UK-flag.png'
-              }
-            />
+            <img id="flagIcon" src={language === 'pl' ? FlagPL : FlagUK} />
             <span className={`arrow ${langMenuOpen ? 'open' : ''}`}>▾</span>
           </button>
 
@@ -104,10 +99,7 @@ const Navbar = () => {
                   else if (currentPath === '/search') navigate('/wyszukiwarka');
                 }}
               >
-                <img
-                  src="../src/assets/images/PL-flag.png"
-                  className="smallFlag"
-                />
+                <img src={FlagPL} className="smallFlag" />
                 <span>Polski</span>
               </button>
               <button
@@ -118,10 +110,7 @@ const Navbar = () => {
                   else if (currentPath === '/wyszukiwarka') navigate('/search');
                 }}
               >
-                <img
-                  src="../src/assets/images/UK-flag.png"
-                  className="smallFlag"
-                />
+                <img src={FlagUK} className="smallFlag" />
                 <span>English</span>
               </button>
             </div>,
@@ -196,14 +185,7 @@ const Navbar = () => {
               }}
             >
               <div className="mobileLangOption">
-                <img
-                  id="flagIcon"
-                  src={
-                    language === 'pl'
-                      ? '../src/assets/images/UK-flag.png'
-                      : '../src/assets/images/PL-flag.png'
-                  }
-                />
+                <img id="flagIcon" src={language === 'pl' ? FlagUK : FlagPL} />
                 <span>{t.changeLang}</span>
               </div>
             </button>
